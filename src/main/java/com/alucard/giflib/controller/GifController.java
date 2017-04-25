@@ -9,6 +9,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  * Created by Alucard on 24-Apr-17.
  */
@@ -19,7 +21,9 @@ public class GifController {
   private GifRepository gifRepository;
 
   @RequestMapping("/")
-  public String listGifs() {
+  public String listGifs(ModelMap m) {
+    List<Gif> allGifs = gifRepository.getAllGifs();
+    m.put("gifs", allGifs);
     return "home";
   }
 
