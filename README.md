@@ -2,6 +2,5 @@
 Java SpringBoot application that shows animated GIFs
 
 TODO  
-- Implement search functionality/results page  
-- Implement Favorites page
+- Implement search functionality/results page 
 - Replace repository with database driven one
