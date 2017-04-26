@@ -5,6 +5,7 @@ import com.alucard.giflib.model.Gif;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,5 +34,15 @@ public class GifRepository {
 
   public List<Gif> getAllGifs() {
     return ALL_GIFS;
+  }
+
+  public List<Gif> getByCategory(int id) {
+    List<Gif> resultList = new ArrayList<>();
+    for(Gif g : ALL_GIFS) {
+      if(g.getCategoryId() == id) {
+        resultList.add(g);
+      }
+    }
+    return resultList;
   }
 }
